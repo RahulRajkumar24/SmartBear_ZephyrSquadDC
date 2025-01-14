@@ -1,5 +1,6 @@
 package ZFJ.Pages;
 
+import ZFJ.Base.CommonUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class ProjectCreationpage {
     private static final Logger log = LoggerFactory.getLogger(ProjectCreationpage.class);
     private static WebDriver driver;
-
+    CommonUtils bp;
     private By projectcreationlinkbtn =By.xpath("//a[@id='browse_link']") ;
 
     private By createprojectbtn = By.xpath("//a[@id='project_template_create_link_lnk']");
@@ -31,8 +32,9 @@ public class ProjectCreationpage {
         PageFactory.initElements(ProjectCreationpage.driver,this);
     }
 
-    public void createProject(String name, String key) {
+    public void createProject(String name, String key) throws InterruptedException {
         driver.findElement(projectcreationlinkbtn).click();
+        bp.waitforelement();
         log.info("clicked project creation button");
         driver.findElement(createprojectbtn).click();
         driver.findElement(scrumsoftwaredevelopmentbtn).click();
