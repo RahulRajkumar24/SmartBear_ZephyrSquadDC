@@ -1,5 +1,6 @@
 package ZFJ.Pages;
 
+import ZFJ.Base.CommonUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
 public class ProjectCreationpage {
     private static final Logger log = LoggerFactory.getLogger(ProjectCreationpage.class);
     private static WebDriver driver;
-
+    CommonUtils bp;
     private By projectcreationlinkbtn =By.xpath("//a[@id='browse_link']") ;
 
     private By createprojectbtn = By.xpath("//a[@id='project_template_create_link_lnk']");
@@ -24,15 +25,16 @@ public class ProjectCreationpage {
 
     private By projectkey = By.xpath("//input[@id='key']");
 
-    private By sumbitbtn = By.xpath("//button[@class='add-project-dialog-create-button pt-submit-button aui-button aui-button-primary']");
+    private By submitbtn = By.xpath("//button[@class='add-project-dialog-create-button pt-submit-button aui-button aui-button-primary']");
 
     public ProjectCreationpage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(ProjectCreationpage.driver,this);
     }
 
-    public void createProject(String name, String key) {
+    public void createProject(String name, String key) throws InterruptedException {
         driver.findElement(projectcreationlinkbtn).click();
+        bp.waitforelement();
         log.info("clicked project creation button");
         driver.findElement(createprojectbtn).click();
         driver.findElement(scrumsoftwaredevelopmentbtn).click();
@@ -42,7 +44,7 @@ public class ProjectCreationpage {
         driver.findElement(projectName).sendKeys(name);
         driver.findElement(projectkey).clear();
         driver.findElement(projectkey).sendKeys(key);
-        driver.findElement(sumbitbtn).click();
+        driver.findElement(submitbtn).click();
     }
 
 
