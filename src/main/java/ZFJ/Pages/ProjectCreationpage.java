@@ -36,15 +36,43 @@ public class ProjectCreationpage {
         driver.findElement(projectcreationlinkbtn).click();
         bp.waitforelement();
         log.info("clicked project creation button");
+
         driver.findElement(createprojectbtn).click();
+        bp.waitforelement();
+        log.info("clicking the project creation button");
+
         driver.findElement(scrumsoftwaredevelopmentbtn).click();
+        bp.waitforelement();
+        log.info("clicking the project creation scrum software development button");
+
         driver.findElement(nextbtn).click();
+        bp.waitforelement();
+        log.info("clicking Next button");
+
         driver.findElement(selectbtn).click();
+        bp.waitforelement();
+        log.info("clicking the select button");
+
         driver.findElement(projectName).clear();
+        bp.waitforelement();
+        log.info("clearing project name text box");
+
         driver.findElement(projectName).sendKeys(name);
+        bp.waitforelement();
+        log.info("Entering project name");
+
         driver.findElement(projectkey).clear();
+        bp.waitforelement();
+        log.info("clearing project key text box");
+
         driver.findElement(projectkey).sendKeys(key);
+        bp.waitforelement();
+        log.info("Entering project key");
+
         driver.findElement(submitbtn).click();
+        bp.waitforelement();
+        log.info("clicking submit button");
+
     }
 
 
