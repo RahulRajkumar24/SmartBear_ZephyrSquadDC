@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="ZFJ_Automation_RR(failed)">
+    <classes>
+      <class name="Loginpagetest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setUp"/>
+          <include name="loginpagetest"/>
+        </methods>
+      </class> <!-- Loginpagetest -->
+    </classes>
+  </test> <!-- ZFJ_Automation_RR(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

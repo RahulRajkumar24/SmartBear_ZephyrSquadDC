@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Rahul B Rajkumar/Programs_Workspace/ZFJ_Automation_RR">
+
+
+           <classes>
+               <class name="ZFJTest.Loginpagetest"/>
+               <class name="ZFJTest.projectcreationtest_1"/>
+               <class name="ZFJTest.projectcreationtest_10"/>
+           </classes>
+
+
+    </test>
+</suite>
